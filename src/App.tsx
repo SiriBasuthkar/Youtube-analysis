@@ -4,9 +4,10 @@ import VideoAnalyzer from './components/VideoAnalyzer';
 import Dashboard from './components/Dashboard';
 import Results from './components/Results';
 
+// src/types.ts (or inside App.tsx)
 export interface SubtopicAnalysis {
   name: string;
-  coverage: number;
+  coverage: number; // 0-100
   status: 'covered' | 'partial' | 'missing';
   keywords: string[];
 }
@@ -20,6 +21,7 @@ export interface AnalysisResult {
   transcriptLength: number;
   analysisDate: string;
 }
+
 
 function App() {
   const [currentView, setCurrentView] = useState<'dashboard' | 'analyzer' | 'results'>('dashboard');
